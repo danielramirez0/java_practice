@@ -11,7 +11,7 @@ public class Main {
         }
 
         int counter = 0;
-        for (int i = 11; i <= 43;i++) {
+        for (int i = 11; i <= 43; i++) {
             if (isPrime(i)) {
                 System.out.println(i + " is prime");
                 counter++;
@@ -20,6 +20,19 @@ public class Main {
                 }
             }
         }
+        // Sum 3 and 5 challenge
+        int sum = 0;
+        int count = 0;
+        for (int i = 1; i <= 1000; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                count++;
+                sum += i;
+                System.out.println(i + " divisible by 3 and 5");
+            }
+            if (count == 5) break;
+        }
+        System.out.println("Sum = " + sum);
+        System.out.println(sumOdd(1, 11));
     }
 
     public static double calculateInterest(double amount, double interestRate) {
@@ -39,5 +52,22 @@ public class Main {
             }
         }
         return true;
+    }
+
+    // Sum Odd
+    public static boolean isOdd(int number) {
+        if (number <= 0) return false;
+        return number % 2 != 0;
+    }
+
+    public static int sumOdd(int start, int end) {
+        if (end < start || start < 0) return -1;
+        int sum = 0;
+        for (int i = start; i <= end; i++) {
+            if (isOdd(i)) {
+                sum += i;
+            }
+        }
+        return sum;
     }
 }
