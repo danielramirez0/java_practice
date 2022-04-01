@@ -25,4 +25,4 @@ hs_err_pid*
 # Custom files
 SW_Tools
 .DS_Store
-.init
+.idea
