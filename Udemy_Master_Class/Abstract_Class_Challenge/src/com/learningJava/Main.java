@@ -98,5 +98,16 @@ public class Main {
         list.traverse(list.getRoot());
         list.removeItem(list.getRoot());
         list.traverse(list.getRoot());
+
+        System.out.println("###########BINARY SEARCH TREE##########");
+        SearchTree searchList = new SearchTree(null);
+        for (String s : data ){
+            searchList.addItem(new Node(s));
+        }
+        searchList.traverse(searchList.getRoot());
+        searchList.removeItem(new Node("0"));
+        searchList.removeItem(new Node("9"));
+        searchList.removeItem(new Node("5"));
+        searchList.traverse(searchList.getRoot());
     }
 }

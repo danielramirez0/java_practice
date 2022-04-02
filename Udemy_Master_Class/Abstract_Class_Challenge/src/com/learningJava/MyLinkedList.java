@@ -104,5 +104,12 @@ public class MyLinkedList implements NodeList {
                 root = root.next();
             }
         }
+        // using recursion, but not a good idea because for larger numbers of records,
+        // it will overflow and crash the application.
+        // this is where a binary tree has an advantage when using recursion
+//        if (root != null) {
+//            System.out.println(root.getValue());
+//            traverse(root.next());
+//        }
     }
 }
