@@ -3,6 +3,7 @@ package com.learningJava;
 import com.example.game.ISaveable;
 import com.example.game.Monster;
 import com.example.game.Player;
+import com.learningjava.Series;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -50,6 +51,18 @@ public class Main {
         saveObject(werewolf);
         // In order to access getters on Monster class, you need to cast it to Monster class
         System.out.println("Strength = " + ((Monster) werewolf).getStrength());
+
+        for (int i = 0; i <= 10; i++) {
+            System.out.println(Series.nSum(i));
+        }
+
+        for (int i = 0; i <= 10; i++) {
+            System.out.println(Series.factorial(i));
+        }
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println(Series.fibonacci(i));
+        }
 
     }
 
