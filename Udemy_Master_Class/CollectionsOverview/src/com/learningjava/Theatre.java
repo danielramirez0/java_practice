@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Theatre {
     private final String name;
-    private List<Seat> seats = new ArrayList<>();
+    public List<Seat> seats = new ArrayList<>(); //changed to public for testing
     private List<Seat> seatsLinkedList = new LinkedList<>(); //changed to LinkList
     private Collection<Seat> seatsCollectionLinkedList = new LinkedList<>(); //changed type to more generic Collection
     // advantage of using Collection is that is lets you use any of the collection classes to store a seat
@@ -63,7 +63,7 @@ public class Theatre {
         }
     }
 
-    private class Seat implements Comparable<Seat> {
+    public class Seat implements Comparable<Seat> { //changed to public for testing
         private final String seatNumber;
         private boolean reserved = false;
 
