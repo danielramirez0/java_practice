@@ -75,17 +75,37 @@ public class Main {
 
         HeavenlyBody body = solarSystem.get("Mars");
         System.out.println("Moons of " + body.getName());
-        for (HeavenlyBody jupiterMoon : body.getSatellites()) {
-            System.out.println("\t" + jupiterMoon.getName());
-        }
+        printSet(body.getSatellites());
 
         Set<HeavenlyBody> moons = new HashSet<>();
         for (HeavenlyBody planet : planets) {
             moons.addAll(planet.getSatellites());
         }
         System.out.println("All Moons");
-        for (HeavenlyBody moon : moons) {
-            System.out.println("\t" + moon.getName());
+        printSet(moons);
+        HeavenlyBody pluto = new HeavenlyBody("Pluto", 842);
+        planets.add(pluto);
+        System.out.println("After adding pluto with duplicate key");
+        printSet(planets, true);
+        System.out.println("This is because the two objects don't compare equal; they are using the basic Object.equals(x, y) method" +
+                " which states that both objects are equal if they point to the same reference. These do not.");
+        System.out.println("i.e.");
+        Object o = new Object();
+        o.equals(o);
+        "pluto".equals("");
+
+
+    }
+
+    public static void printSet(Set<HeavenlyBody> set){
+        for (HeavenlyBody body : set){
+            System.out.println("\t"+body.getName());
+        }
+    }
+
+    public static void printSet(Set<HeavenlyBody> set, boolean showOrbital){
+        for (HeavenlyBody body : set){
+            System.out.println("\t"+body.getName() + ": " + body.getOrbitalPeriod());
         }
     }
 }
