@@ -37,7 +37,7 @@ public final class HeavenlyBody {
       }
       System.out.println("obj.getClass() is " + obj.getClass());
       System.out.println("this.getClass() is " + this.getClass());
-      if (obj == null || obj.getClass() != this.getClass()){
+      if (obj == null || obj.getClass() != this.getClass()){ // this is unnecessary because the class is final and can't be extended
          return false;
       }
       String objName = ((HeavenlyBody) obj).getName();
